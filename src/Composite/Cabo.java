@@ -1,3 +1,4 @@
+package Composite;
 
 public class Cabo extends Soldado{
   String ordenRecibida; 

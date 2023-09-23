@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+package Composite;
 
 public class Capitan extends Soldado {
   ArrayList<Soldado> tenientes; 

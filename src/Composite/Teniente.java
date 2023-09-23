@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+package Composite;
 public class Teniente extends Soldado{
   ArrayList<Soldado> cabos;
   String ordenRecibida;
