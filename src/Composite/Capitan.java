@@ -9,17 +9,11 @@ public class Capitan extends Soldado {
     this.nombre = nombre; 
     this.formacion = formacion; 
     this.rango = "Capitan";
+    ataque = 1;
+    defensa = 1;
+    velocidad = 1;
   }
 
-  public int getAtaque(){
-    return 1;
-  }
-  public int getDefensa(){
-    return 1; 
-  }
-  public int getVelocidad(){
-    return 1; 
-  }
   public void add(Soldado soldado){
     tenientes.add(soldado);
   }

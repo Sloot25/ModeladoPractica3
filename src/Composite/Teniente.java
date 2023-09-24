@@ -4,22 +4,16 @@ import java.util.ArrayList;
 
 public class Teniente extends Soldado{
   ArrayList<Soldado> cabos;
-  ArrayList<Soldado> tenientes;
   String ordenRecibida;
   public Teniente(String nombre, String formacion){
     this.nombre = nombre; 
     this.formacion = formacion; 
     this.rango = "Teniente";
+    ataque = 1;
+    defensa = 1;
+    velocidad = 1;
   }
-  public int getAtaque(){
-    return 1; 
-  }
-  public int getDefensa(){
-    return 1;
-  }
-  public int getVelocidad(){
-    return 1;
-  }
+
   public void remove(Soldado soldado){
     cabos.remove(soldado);
   }
@@ -36,7 +30,7 @@ public class Teniente extends Soldado{
   }
   public String reportarse(){
     String reporte = this.toString();
-    for(Soldado soldado : tenientes)
+    for(Soldado soldado : cabos)
       reporte += "    " + soldado.toString();
     return reporte;
   }

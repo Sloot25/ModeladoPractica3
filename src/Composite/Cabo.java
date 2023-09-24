@@ -6,15 +6,9 @@ public class Cabo extends Soldado{
     this.nombre = nombre; 
     this.formacion = formacion; 
     this.rango = "Cabo";
-  }
-  public int getAtaque(){
-    return 1; 
-  }
-  public int getVelocidad(){
-    return 1; 
-  }
-  public int getDefensa(){
-    return 1;
+    ataque = 1;
+    velocidad = 1;
+    defensa = 1;
   }
   public void recibirOrden(String orden){
     this.ordenRecibida = orden; 

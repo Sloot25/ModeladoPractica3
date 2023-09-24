@@ -1,18 +1,32 @@
 package Composite;
 
+import java.util.ArrayList;
+
+import Decorator.ArmasDecorator;
+
 public abstract class Soldado {
   String nombre; 
   String formacion; 
   String rango;
+  int ataque;
+  int defensa;
+  int velocidad;
+  ArrayList<ArmasDecorator> armas;
 
   public int getAtaque(){
-    throw new UnsupportedOperationException();
+    return ataque;
   }
   public int getDefensa(){
-    throw new UnsupportedOperationException();
+    return defensa;
   }
   public int getVelocidad(){
-    throw new UnsupportedOperationException();
+    return velocidad;
+  }
+  public void equipar(ArmasDecorator arma){
+    armas.add(arma);
+    ataque += arma.getAtaque();
+    defensa += arma.getDefensa();
+    velocidad += arma.getVelocidad();
   }
   public void add(Soldado soldado){
     throw new UnsupportedOperationException();
@@ -27,6 +41,10 @@ public abstract class Soldado {
     throw new UnsupportedOperationException();
   }
   public String getArmas(){
-    throw new UnsupportedOperationException();
+    String s = "";
+    for(ArmasDecorator arma: armas){
+      s += arma + ", ";
+    }
+    return s;
   }
 }
