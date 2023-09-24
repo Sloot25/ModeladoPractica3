@@ -11,7 +11,6 @@ public abstract class Soldado {
   int ataque;
   int defensa;
   int velocidad;
-  ArrayList<ArmasDecorator> armas;
 
   public int getAtaque(){
     return ataque;
@@ -21,12 +20,6 @@ public abstract class Soldado {
   }
   public int getVelocidad(){
     return velocidad;
-  }
-  public void equipar(ArmasDecorator arma){
-    armas.add(arma);
-    ataque += arma.getAtaque();
-    defensa += arma.getDefensa();
-    velocidad += arma.getVelocidad();
   }
   public void add(Soldado soldado){
     throw new UnsupportedOperationException();
@@ -41,10 +34,6 @@ public abstract class Soldado {
     throw new UnsupportedOperationException();
   }
   public String getArmas(){
-    String s = "";
-    for(ArmasDecorator arma: armas){
-      s += arma + ", ";
-    }
-    return s;
+    throw new UnsupportedOperationException();
   }
 }
