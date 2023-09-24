@@ -1,5 +1,6 @@
-import Composite.Soldado; 
 package Decorator; 
+
+import Composite.Soldado; 
 
 public class PistolaPapas extends ArmasDecorator {
   public PistolaPapas(Soldado soldado){

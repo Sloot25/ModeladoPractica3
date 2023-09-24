@@ -1,5 +1,7 @@
-import Composite.Soldado; 
 package Decorator; 
+
+import Composite.Soldado; 
+
 public class RashoLaser extends ArmasDecorator{
   public RashoLaser(Soldado soldado){
     this.soldado = soldado; 

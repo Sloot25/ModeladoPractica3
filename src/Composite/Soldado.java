@@ -6,27 +6,27 @@ public abstract class Soldado {
   String rango;
 
   public int getAtaque(){
-    throw new UnSupportedOperationException();
+    throw new UnsupportedOperationException();
   }
   public int getDefensa(){
-    throw new UnSupportedOperationException();
+    throw new UnsupportedOperationException();
   }
   public int getVelocidad(){
-    throw new UnSupportedOperationException();
+    throw new UnsupportedOperationException();
   }
   public void add(Soldado soldado){
-    throw new UnSupportedOperationException();
+    throw new UnsupportedOperationException();
   }
   public void remove(Soldado soldado){
-    throw new UnSupportedOperationException();
+    throw new UnsupportedOperationException();
   }
-  public void darOrden(Soldado soldado){
-    throw new UnSupportedOperationException(); 
+  public void darOrden(String orden){
+    throw new UnsupportedOperationException(); 
   }
-  public void recibirOrden(Soldado soldado){
-    throw new UnSupportedOperationException();
+  public void recibirOrden(String orden){
+    throw new UnsupportedOperationException();
   }
   public String getArmas(){
-    throw new UnSupportedOperationException();
+    throw new UnsupportedOperationException();
   }
 }

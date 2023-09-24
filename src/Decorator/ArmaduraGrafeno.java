@@ -1,5 +1,7 @@
-import Composite.Soldado; 
 package Decorator; 
+
+import Composite.Soldado;
+
 public class ArmaduraGrafeno extends ArmasDecorator{
   public ArmaduraGrafeno(Soldado soldado){
     this.soldado = soldado; 

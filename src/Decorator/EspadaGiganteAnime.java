@@ -1,5 +1,7 @@
-import Composite.Soldado;
 package Decorator; 
+
+import Composite.Soldado;
+
 public class EspadaGiganteAnime extends ArmasDecorator{
   public EspadaGiganteAnime(Soldado soldado){
     this.soldado = soldado; 

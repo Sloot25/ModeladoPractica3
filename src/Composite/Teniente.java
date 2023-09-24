@@ -1,7 +1,10 @@
-import java.util.ArrayList;
 package Composite;
+
+import java.util.ArrayList;
+
 public class Teniente extends Soldado{
   ArrayList<Soldado> cabos;
+  ArrayList<Soldado> tenientes;
   String ordenRecibida;
   public Teniente(String nombre, String formacion){
     this.nombre = nombre; 
@@ -38,11 +41,11 @@ public class Teniente extends Soldado{
     return reporte;
   }
   public String toString(){
-    return this.rango + ": " + this.nombre + '\n'
-      "Formacion de combate: " + this.formacion + '\n' 
-      "Armas: " + this.getArmas() + '\n'
-      "Ataque: " + this.getAtaque() + '\n'
-      "Defensa: " + this.getDefensa() + '\n' 
+    return this.rango + ": " + this.nombre + '\n' +
+      "Formacion de combate: " + this.formacion + '\n' +
+      "Armas: " + this.getArmas() + '\n' +
+      "Ataque: " + this.getAtaque() + '\n' +
+      "Defensa: " + this.getDefensa() + '\n' +
       "Velocidad: " + this.getVelocidad() + '\n';
   }
 }
