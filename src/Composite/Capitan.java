@@ -9,6 +9,7 @@ public class Capitan extends Soldado {
     this.nombre = nombre; 
     this.formacion = formacion; 
     this.rango = "Capitan";
+    this.armas = "";
     ataque = 1;
     defensa = 1;
     velocidad = 1;
@@ -23,20 +24,21 @@ public class Capitan extends Soldado {
   public void darOrden(String orden){
     for(Soldado soldado : tenientes)
       soldado.recibirOrden(orden);
-  }
+  }/*  
   public void recibirOrden(String orden){
     this.darOrden(orden);
-  }
+  }*/
   public String reportarse(){
     String reporte = this.toString();
     for(Soldado soldado : tenientes)
       reporte += "    " + soldado.toString();
     return reporte;
   }
+
   public String toString(){
     return this.rango + ": " + this.nombre + '\n'+
       "Formacion de combate: " + this.formacion + '\n' +
-      "Armas: " + this.getArmas() + '\n' +
+      //"Armas: " + this.getArmas() + '\n' +
       "Ataque: " + this.getAtaque() + '\n' +
       "Defensa: " + this.getDefensa() + '\n' +
       "Velocidad: " + this.getVelocidad() + '\n';
