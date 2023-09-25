@@ -9,29 +9,33 @@ public class Capitan extends Soldado {
     this.nombre = nombre; 
     this.formacion = formacion; 
     this.rango = "Capitan";
-    ataque = 1;
-    defensa = 1;
-    velocidad = 1;
+  }
+
+  public int getAtaque(){
+    return 1;
+  }
+  public int getDefensa(){
+    return 1;
+  }
+  public int getVelocidad(){
+    return 1;
   }
 
   public void add(Soldado soldado){
+    soldado.setFormacion(this.formacion);
     tenientes.add(soldado);
   }
   public void remove(Soldado soldado){
     tenientes.remove(soldado);
-  }
-  public void darOrden(String orden){
-    for(Soldado soldado : tenientes)
-      soldado.recibirOrden(orden);
-  }
-  public void recibirOrden(String orden){
-    this.darOrden(orden);
   }
   public String reportarse(){
     String reporte = this.toString();
     for(Soldado soldado : tenientes)
       reporte += "    " + soldado.toString();
     return reporte;
+  }
+  public String getNombre(){
+    return this.nombre;
   }
   public String toString(){
     return this.rango + ": " + this.nombre + '\n'+

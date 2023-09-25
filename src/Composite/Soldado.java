@@ -1,22 +1,23 @@
 package Composite;
 
+
+
 public abstract class Soldado {
   String nombre; 
   String formacion; 
   String rango;
-  int ataque;
-  int defensa;
-  int velocidad;
-  String armas = "";
 
   public int getAtaque(){
-    return ataque;
+    throw new UnsupportedOperationException();
   }
   public int getDefensa(){
-    return defensa;
+    throw new UnsupportedOperationException();
   }
   public int getVelocidad(){
-    return velocidad;
+    throw new UnsupportedOperationException();
+  }
+  public void setFormacion(String formacion){
+    throw new UnsupportedOperationException();
   }
   public void add(Soldado soldado){
     throw new UnsupportedOperationException();
@@ -24,13 +25,10 @@ public abstract class Soldado {
   public void remove(Soldado soldado){
     throw new UnsupportedOperationException();
   }
-  public void darOrden(String orden){
-    throw new UnsupportedOperationException(); 
-  }
-  public void recibirOrden(String orden){
-    throw new UnsupportedOperationException();
-  }
   public String getArmas(){
-    return armas;
+    return "";
+  }
+  public String getRango(){
+    return this.rango;
   }
 }
