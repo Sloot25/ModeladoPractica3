@@ -12,4 +12,8 @@ public class AlasGallina extends ArmasDecorator{
       public int getVelocidad(){
         return soldado.getVelocidad() + 2;
       }
+      public String getArmas(){
+        return "Alas de gallina, " + soldado.getArmas();
+      }
+    
 }
