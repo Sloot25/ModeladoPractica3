@@ -16,7 +16,7 @@ public class EquiparNuevoSoldado {
         nombre = sc.nextLine();
         
         // no es necesario que tenga formacion
-        formacion = "";
+        formacion = "MataJudios";
 
         // construye un objeto de tipo Capitan, Teniente o Cabo 
         // depende de lo que elija el usuario
@@ -65,10 +65,10 @@ public class EquiparNuevoSoldado {
                 return new Capitan(nombre, formacion); 
     
             case 2:
-                return new Teniente(nombre, formacion); 
+                return new Teniente(nombre); 
 
             case 3:
-                return new Cabo(nombre, formacion);
+                return new Cabo(nombre);
 
             default:
                 throw new IllegalArgumentException("Tipo de soldado no válido");
@@ -179,7 +179,7 @@ public class EquiparNuevoSoldado {
 
             switch (opcion) {
                 case 1:
-                    return new AlasGallina(soldado);
+                    //return new AlasGallina(soldado);
         
                 case 2:
                     return new PiernasRanaGigante(soldado);
