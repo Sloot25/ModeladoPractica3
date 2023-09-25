@@ -4,18 +4,19 @@ public abstract class Soldado {
   String nombre; 
   String formacion; 
   String rango;
+  int ataque;
+  int defensa;
+  int velocidad;
+  String armas = "";
 
   public int getAtaque(){
-    return 1;
+    return ataque;
   }
   public int getDefensa(){
-    return 1;
+    return defensa;
   }
   public int getVelocidad(){
-    return 1;
-  }
-  public void setFormacion(String formacion){
-    this.formacion = formacion;
+    return velocidad;
   }
   public void add(Soldado soldado){
     throw new UnsupportedOperationException();
@@ -23,21 +24,14 @@ public abstract class Soldado {
   public void remove(Soldado soldado){
     throw new UnsupportedOperationException();
   }
-  abstract public String reportarse();
-  public String reporteBatallon(){
+  public void darOrden(String orden){
+    throw new UnsupportedOperationException(); 
+  }
+  public void recibirOrden(String orden){
     throw new UnsupportedOperationException();
   }
-  public String getFormacion(){
-    return this.formacion;
-  }
   public String getArmas(){
-    return "";
-  }
-  public String getRango(){
-    return this.rango;
-  }
-  public String getNombre(){
-    return this.nombre;
+    return armas;
   }
   public String getRango(){
     return rango;

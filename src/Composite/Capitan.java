@@ -6,32 +6,35 @@ public class Capitan extends Soldado {
   ArrayList<Soldado> tenientes; 
 
   public Capitan(String nombre, String formacion){
-    tenientes = new ArrayList<Soldado>();
     this.nombre = nombre; 
     this.formacion = formacion; 
     this.rango = "Capitan";
+    ataque = 1;
+    defensa = 1;
+    velocidad = 1;
   }
 
   public void add(Soldado soldado){
-    if(!soldado.getRango().equals("Teniente"))
-      throw new UnsupportedOperationException();
-    soldado.setFormacion(getFormacion());
     tenientes.add(soldado);
   }
   public void remove(Soldado soldado){
     tenientes.remove(soldado);
   }
-  public String reportarse(){
-    return toString() + reporteBatallon();
-  }
-  public String reporteBatallon(){
-    String reporte = "";
+  public void darOrden(String orden){
     for(Soldado soldado : tenientes)
-      reporte += soldado.reportarse() + '\n';
+      soldado.recibirOrden(orden);
+  }
+  public void recibirOrden(String orden){
+    this.darOrden(orden);
+  }
+  public String reportarse(){
+    String reporte = this.toString();
+    for(Soldado soldado : tenientes)
+      reporte += "    " + soldado.toString();
     return reporte;
   }
   public String toString(){
-    return  this.rango + ": " + this.nombre + '\n'+
+    return this.rango + ": " + this.nombre + '\n'+
       "Formacion de combate: " + this.formacion + '\n' +
       "Armas: " + this.getArmas() + '\n' +
       "Ataque: " + this.getAtaque() + '\n' +

@@ -5,14 +5,12 @@ import Composite.Soldado;
 public class ArmaduraTanque extends ArmasDecorator{
   public ArmaduraTanque(Soldado soldado){
     this.soldado = soldado; 
+    this.nombre = "Armadura de tanque";
   }
   public int getDefensa(){
     return soldado.getDefensa() + 5;
   }
   public int getVelocidad(){
     return soldado.getVelocidad() - 5; 
-  }
-  public String getArmas(){
-    return "Armadura de tanque, " + soldado.getArmas();
   }
 }

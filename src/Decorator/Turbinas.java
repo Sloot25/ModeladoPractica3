@@ -5,6 +5,7 @@ import Composite.Soldado;
 public class Turbinas extends ArmasDecorator{
   public Turbinas(Soldado soldado){
     this.soldado = soldado;
+    this.nombre = "Turbinas";
   }
   public int getVelocidad(){
     return soldado.getVelocidad() + 5;
@@ -12,8 +13,6 @@ public class Turbinas extends ArmasDecorator{
   public int getAtaque(){
     return soldado.getAtaque() - 2;
   }
-  public String getArmas(){
-    return "Turbinas, " + soldado.getArmas();
-  }
+
   
 }
