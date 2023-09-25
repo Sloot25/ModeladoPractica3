@@ -23,6 +23,12 @@ public abstract class Soldado {
   public void remove(Soldado soldado){
     throw new UnsupportedOperationException();
   }
+  public String reportarse(){
+    throw new UnsupportedOperationException();
+  }
+  public String getFormacion(){
+    return this.formacion;
+  }
   public String getArmas(){
     return "";
   }

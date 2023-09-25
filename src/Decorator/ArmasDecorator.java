@@ -8,6 +8,12 @@ public abstract class ArmasDecorator extends Soldado {
   public String toString(){
     return nombre;
   }
+  public String getFormacion(){
+    return soldado.getFormacion();
+  }
+  public void setFormacion(String formacion){
+    soldado.setFormacion(formacion);
+  }
   public int getAtaque(){
     return soldado.getAtaque();
   }
@@ -23,13 +29,13 @@ public abstract class ArmasDecorator extends Soldado {
   public void remove(Soldado soldado){
     this.soldado.remove(soldado);
   }
-  public void darOrden(String orden){
-    this.soldado.darOrden(orden);
-  }
-  public void recibirOrden(String orden){
-    this.soldado.recibirOrden(orden);
-  }
   public String getArmas(){
     return nombre + ", " + soldado.getArmas();
+  }
+  public String getRango(){
+    return this.soldado.getRango();
+  }
+  public String reportarse(){
+    return soldado.reportarse();
   }
 }

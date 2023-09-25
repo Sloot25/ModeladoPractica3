@@ -13,11 +13,11 @@ public class Cabo extends Soldado{
     return this.nombre; 
   }
   public String toString(){
-    return this.rango + ": " + this.nombre + '\n' +
-      "Formacion de combate: " + this.formacion + '\n' +
-      "Armas: " + this.getArmas() + '\n' +
-      "Ataque: " + this.getAtaque() + '\n' +
-      "Defensa: " + this.getDefensa() + '\n' +
-      "Velocidad: " + this.getVelocidad() + '\n';
+    return "        " + this.rango + ": " + this.nombre + '\n' +
+      "        Formacion de combate: " + this.formacion + '\n' +
+      "        Armas: " + this.getArmas() + '\n' +
+      "        Ataque: " + this.getAtaque() + '\n' +
+      "        Defensa: " + this.getDefensa() + '\n' +
+      "        Velocidad: " + this.getVelocidad() + '\n';
   }
 }

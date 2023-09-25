@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Teniente extends Soldado{
   ArrayList<Soldado> cabos;
   public Teniente(String nombre){
+    cabos = new ArrayList<Soldado>();
     this.nombre = nombre; 
     this.rango = "Teniente";
   }
@@ -14,25 +15,27 @@ public class Teniente extends Soldado{
   public void add(Soldado soldado){
     if(!soldado.getRango().equals("Cabo"))
       throw new UnsupportedOperationException();
-    soldado.setFormacion(this.formacion);
+    soldado.setFormacion(this.getFormacion());
     cabos.add(soldado);
   }
-
+  public String getRango(){
+    return this.rango;
+  }
   public String reportarse(){
     String reporte = this.toString();
     for(Soldado soldado : cabos)
-      reporte += "    " + soldado.reportarse();
+      reporte +=  soldado.reportarse();
     return reporte;
   }
   public String getNombre(){
     return this.nombre;
   }
   public String toString(){
-    return this.rango + ": " + this.nombre + '\n' +
-      "Formacion de combate: " + this.formacion + '\n' +
-      "Armas: " + this.getArmas() + '\n' +
-      "Ataque: " + this.getAtaque() + '\n' +
-      "Defensa: " + this.getDefensa() + '\n' +
-      "Velocidad: " + this.getVelocidad() + '\n';
+    return "    " + this.rango + ": " + this.nombre + '\n' +
+      "    Formacion de combate: " + this.formacion + '\n' +
+      "    Armas: " + this.getArmas() + '\n' +
+      "    Ataque: " + this.getAtaque() + '\n' +
+      "    Defensa: " + this.getDefensa() + '\n' +
+      "    Velocidad: " + this.getVelocidad() + '\n';
   }
 }

@@ -179,7 +179,7 @@ public class EquiparNuevoSoldado {
 
             switch (opcion) {
                 case 1:
-                    return new AlasGallina(soldado);
+                    //return new AlasGallina(soldado);
         
                 case 2:
                     return new PiernasRanaGigante(soldado);

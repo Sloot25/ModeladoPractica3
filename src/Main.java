@@ -7,7 +7,8 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		int opcion;
     EquiparNuevoSoldado equiparNuevoSoldado = new EquiparNuevoSoldado();
-    
+    ReportarBatallones reportarBatallones = new ReportarBatallones();
+     
 
 		System.out.println("***********************************************************");
 		System.out.println("*                                                         *");
@@ -40,11 +41,11 @@ public class Main {
 				case 1:
 					equiparNuevoSoldado.crearNuevoSoldado();
 					break;
-        /*
 				case 2:
-					Batallon.reportar();
+					reportarBatallones.reportar();
 					break;
-        */
+        case 3: 
+          System.err.println("Aun no hemos recibido al soldado cheems \nEsperando pacientemente...");
 				case 0:
 					System.out.println("Saliendo del menu...");
 					break;
