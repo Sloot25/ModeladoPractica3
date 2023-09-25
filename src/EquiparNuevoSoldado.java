@@ -16,7 +16,7 @@ public class EquiparNuevoSoldado {
         nombre = sc.nextLine();
         
         // no es necesario que tenga formacion
-        formacion = "";
+        formacion = "MataJudios";
 
         // construye un objeto de tipo Capitan, Teniente o Cabo 
         // depende de lo que elija el usuario
@@ -65,10 +65,10 @@ public class EquiparNuevoSoldado {
                 return new Capitan(nombre, formacion); 
     
             case 2:
-                return new Teniente(nombre, formacion); 
+                return new Teniente(nombre); 
 
             case 3:
-                return new Cabo(nombre, formacion);
+                return new Cabo(nombre);
 
             default:
                 throw new IllegalArgumentException("Tipo de soldado no válido");
@@ -108,7 +108,7 @@ public class EquiparNuevoSoldado {
                     return new ArmaduraTanque(soldado);
                 
                 case 4:
-                    if (soldado.getRango() == "Capitan"){
+                    if (soldado.getRango().equals("Capitan")){
                         return new IronCheems(soldado); 
                     } else{
                         System.out.println("El soldado no esta autorizado para portar esta armadura.");

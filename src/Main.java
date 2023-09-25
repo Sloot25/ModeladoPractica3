@@ -7,7 +7,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		int opcion;
     EquiparNuevoSoldado equiparNuevoSoldado = new EquiparNuevoSoldado();
-
+    
 
 		System.out.println("***********************************************************");
 		System.out.println("*                                                         *");

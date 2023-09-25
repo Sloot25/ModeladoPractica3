@@ -1,7 +1,5 @@
 package Composite;
 
-
-
 public abstract class Soldado {
   String nombre; 
   String formacion; 

@@ -21,7 +21,7 @@ public class Teniente extends Soldado{
   public String reportarse(){
     String reporte = this.toString();
     for(Soldado soldado : cabos)
-      reporte += "    " + soldado.toString();
+      reporte += "    " + soldado.reportarse();
     return reporte;
   }
   public String getNombre(){

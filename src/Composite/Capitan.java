@@ -23,7 +23,7 @@ public class Capitan extends Soldado {
   public String reportarse(){
     String reporte = this.toString();
     for(Soldado soldado : tenientes)
-      reporte += "    " + soldado.toString();
+      reporte += "    " + soldado.reportarse();
     return reporte;
   }
   public String toString(){
