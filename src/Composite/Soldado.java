@@ -33,4 +33,7 @@ public abstract class Soldado {
   public String getArmas(){
     return armas;
   }
+  public String getRango(){
+    return rango;
+  }
 }

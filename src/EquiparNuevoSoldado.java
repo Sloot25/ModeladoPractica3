@@ -108,7 +108,7 @@ public class EquiparNuevoSoldado {
                     return new ArmaduraTanque(soldado);
                 
                 case 4:
-                    if (soldado.getRango() == "Capitan"){
+                    if (soldado.getRango().equals("Capitan")){
                         return new IronCheems(soldado); 
                     } else{
                         System.out.println("El soldado no esta autorizado para portar esta armadura.");
