@@ -11,17 +11,9 @@ public class Capitan extends Soldado {
     this.rango = "Capitan";
   }
 
-  public int getAtaque(){
-    return 1;
-  }
-  public int getDefensa(){
-    return 1;
-  }
-  public int getVelocidad(){
-    return 1;
-  }
-
   public void add(Soldado soldado){
+    if(!soldado.getRango().equals("Teniente"))
+      throw new UnsupportedOperationException();
     soldado.setFormacion(this.formacion);
     tenientes.add(soldado);
   }
@@ -33,9 +25,6 @@ public class Capitan extends Soldado {
     for(Soldado soldado : tenientes)
       reporte += "    " + soldado.toString();
     return reporte;
-  }
-  public String getNombre(){
-    return this.nombre;
   }
   public String toString(){
     return this.rango + ": " + this.nombre + '\n'+

@@ -8,24 +8,12 @@ public class Teniente extends Soldado{
     this.nombre = nombre; 
     this.rango = "Teniente";
   }
-
-  public int getAtaque(){
-    return 1;
-  }
-  public int getDefensa(){
-    return 1;
-  }
-  public int getVelocidad(){
-    return 1;
-  }
-  public void setFormacion(String formacion){
-    this.formacion = formacion; 
-  }
-
   public void remove(Soldado soldado){
     cabos.remove(soldado);
   }
   public void add(Soldado soldado){
+    if(!soldado.getRango().equals("Cabo"))
+      throw new UnsupportedOperationException();
     soldado.setFormacion(this.formacion);
     cabos.add(soldado);
   }

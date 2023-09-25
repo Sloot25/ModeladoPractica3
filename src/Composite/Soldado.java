@@ -8,16 +8,16 @@ public abstract class Soldado {
   String rango;
 
   public int getAtaque(){
-    throw new UnsupportedOperationException();
+    return 1;
   }
   public int getDefensa(){
-    throw new UnsupportedOperationException();
+    return 1;
   }
   public int getVelocidad(){
-    throw new UnsupportedOperationException();
+    return 1;
   }
   public void setFormacion(String formacion){
-    throw new UnsupportedOperationException();
+    this.formacion = formacion;
   }
   public void add(Soldado soldado){
     throw new UnsupportedOperationException();

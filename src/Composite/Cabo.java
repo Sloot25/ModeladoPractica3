@@ -6,18 +6,6 @@ public class Cabo extends Soldado{
     this.rango = "Cabo";
   }
 
-  public int getAtaque(){
-    return 1;
-  }
-  public int getDefensa(){
-    return 1;
-  }
-  public int getVelocidad(){
-    return 1;
-  }
-  public void setFormacion(String formacion){
-    this.formacion = formacion;
-  }
   public String reportarse(){
     return this.toString();
   }
