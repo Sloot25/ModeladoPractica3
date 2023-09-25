@@ -23,7 +23,8 @@ public abstract class Soldado {
   public void remove(Soldado soldado){
     throw new UnsupportedOperationException();
   }
-  public String reportarse(){
+  abstract public String reportarse();
+  public String reporteBatallon(){
     throw new UnsupportedOperationException();
   }
   public String getFormacion(){
@@ -34,5 +35,8 @@ public abstract class Soldado {
   }
   public String getRango(){
     return this.rango;
+  }
+  public String getNombre(){
+    return this.nombre;
   }
 }

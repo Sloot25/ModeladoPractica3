@@ -23,7 +23,7 @@ public class ReportarBatallones {
             System.out.println(reportarse());
             return; 
           case 2: 
-            System.out.println(reporteBatallon(2));
+            System.out.println(reporteBatallon(1));
             return;
           case 3:
             System.out.println(reporteSoldadoEspecifico());

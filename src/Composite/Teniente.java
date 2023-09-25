@@ -22,18 +22,18 @@ public class Teniente extends Soldado{
     return this.rango;
   }
   public String reportarse(){
-    String reporte = this.toString();
+    return this.toString() + reporteBatallon();
+  }
+  public String reporteBatallon(){
+    String reporte = "";
     for(Soldado soldado : cabos)
-      reporte +=  soldado.reportarse();
+      reporte +=  soldado.reportarse() + '\n';
     return reporte;
   }
-  public String getNombre(){
-    return this.nombre;
-  }
   public String toString(){
-    return "    " + this.rango + ": " + this.nombre + '\n' +
-      "    Formacion de combate: " + this.formacion + '\n' +
-      "    Armas: " + this.getArmas() + '\n' +
+      return "    " + this.rango + ": " + this.nombre + '\n' +
+      "    Formacion de combate: " + getFormacion() + '\n' +
+      "    Armas: " + getArmas() + '\n' +
       "    Ataque: " + this.getAtaque() + '\n' +
       "    Defensa: " + this.getDefensa() + '\n' +
       "    Velocidad: " + this.getVelocidad() + '\n';

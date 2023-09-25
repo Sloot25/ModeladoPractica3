@@ -22,9 +22,12 @@ public class Capitan extends Soldado {
     tenientes.remove(soldado);
   }
   public String reportarse(){
-    String reporte = this.toString();
+    return toString() + reporteBatallon();
+  }
+  public String reporteBatallon(){
+    String reporte = "";
     for(Soldado soldado : tenientes)
-      reporte += soldado.reportarse();
+      reporte += soldado.reportarse() + '\n';
     return reporte;
   }
   public String toString(){
