@@ -4,18 +4,15 @@ import Composite.Soldado;
 
 public abstract class ArmasDecorator extends Soldado {
   Soldado soldado; 
-  String nombre;
-  public String toString(){
-    return nombre;
+
+  public String getFormacion(){
+    return soldado.getFormacion();
   }
-  public int getAtaque(){
-    return soldado.getAtaque();
+  public String getNombre(){
+    return soldado.getNombre();
   }
-  public int getVelocidad(){
-    return soldado.getVelocidad();
-  }
-  public int getDefensa(){
-    return soldado.getDefensa();
+  public void setFormacion(String formacion){
+    soldado.setFormacion(formacion);
   }
   public void add(Soldado soldado){
     this.soldado.add(soldado);
@@ -23,13 +20,36 @@ public abstract class ArmasDecorator extends Soldado {
   public void remove(Soldado soldado){
     this.soldado.remove(soldado);
   }
-  public void darOrden(String orden){
-    this.soldado.darOrden(orden);
+  public String getRango(){
+    return this.soldado.getRango();
   }
-  public void recibirOrden(String orden){
-    this.soldado.recibirOrden(orden);
+  public String reporteBatallon(){
+    return soldado.reporteBatallon();
   }
-  public String getArmas(){
-    return nombre + ", " + soldado.getArmas();
+
+  public String reportarse(){
+    String espaciado = "";
+    switch (soldado.getRango()) {
+      case "Teniente":
+        espaciado = "    ";
+        break;
+      case "Cabo":
+        espaciado = "        ";
+        break;
+    }
+    return  espaciado + this.getRango() + ": " + this.getNombre() + '\n'+
+    espaciado + "Formacion de combate: " + this.getFormacion() + '\n' +
+    espaciado + "Armas: " + this.getArmas() + '\n' +
+    espaciado + "Ataque: " + this.getAtaque() + '\n' +
+    espaciado + "Defensa: " + this.getDefensa() + '\n' +
+    espaciado + "Velocidad: " + this.getVelocidad() + '\n' + reporteBatallon();
+  }
+  public String toString(){
+    return  this.getRango() + ": " + this.getNombre() + '\n' +
+      "Formacion de combate: " + getFormacion() + '\n' +
+      "Armas: " + getArmas() + '\n' +
+      "Ataque: " + this.getAtaque() + '\n' +
+      "Defensa: " + this.getDefensa() + '\n' +
+      "Velocidad: " + this.getVelocidad() + '\n';
   }
 }
