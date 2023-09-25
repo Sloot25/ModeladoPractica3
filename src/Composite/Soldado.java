@@ -1,9 +1,5 @@
 package Composite;
 
-import java.util.ArrayList;
-
-import Decorator.ArmasDecorator;
-
 public abstract class Soldado {
   String nombre; 
   String formacion; 
@@ -11,6 +7,7 @@ public abstract class Soldado {
   int ataque;
   int defensa;
   int velocidad;
+  String armas = "";
 
   public int getAtaque(){
     return ataque;
@@ -34,6 +31,6 @@ public abstract class Soldado {
     throw new UnsupportedOperationException();
   }
   public String getArmas(){
-    throw new UnsupportedOperationException();
+    return armas;
   }
 }
