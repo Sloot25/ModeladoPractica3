@@ -39,7 +39,4 @@ public abstract class Soldado {
   public String getNombre(){
     return this.nombre;
   }
-  public String getRango(){
-    return rango;
-  }
 }
