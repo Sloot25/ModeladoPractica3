@@ -1,3 +1,7 @@
+/*
+* Clase encargada de solicitar los datos al usuario para crear
+* mandar a pantalla el reporte de los batallones
+*/
 import Composite.*; 
 import Decorator.*;
 import java.util.Scanner;
@@ -10,6 +14,10 @@ public class ReportarBatallones {
     generarBatallones();
   }
 
+  /*
+   * Metodo que le brinda las opciones al usuario para imprimir 
+   * los batallones
+   */
   public void reportar(){
     String menu = "Elige alguna de las siguientes opciones \n1. Reporte Completo \n2. Reporte de Batallon 2 \n3. Reporte de Cabo \n4. Reporte de Soldado Cheems";
     System.out.println(menu);
@@ -45,6 +53,9 @@ public class ReportarBatallones {
     }
   }
   
+  /*
+   * Aqui instanciamos los batallones utilizados en los reportes
+   */
   public void generarBatallones(){
     Soldado princesaDulce = new Capitan("Bonnie", "Formacion del dulce Reino");
     princesaDulce = new ArmaduraGrafeno(princesaDulce);
@@ -147,11 +158,14 @@ public class ReportarBatallones {
     capitanes.add(princesaDulce);
     capitanes.add(gohan);
     capitanes.add(darwin);
-
-    
-    
-    
   }
+
+   /*
+   * Metodos encargados de actualizar la lista capitanes
+   * 
+   * @param soldado: recibe un objeto de tipo soldado y los agrega o elimina 
+   *                 de la lista dependiendo el metodo
+   */
   public void add(Soldado soldado){
     if(!soldado.getRango().equals("Capitan"))
       throw new UnsupportedOperationException();
@@ -160,14 +174,36 @@ public class ReportarBatallones {
   public void remove(Soldado soldado){
     capitanes.remove(soldado);
   }
+
+  /*
+   * Metodo utilizado para el reporte del batallon 2
+   * 
+   * @param int: entero que sera la posicion de la lista capitanes
+   * 
+   * @return string: reporte del capitan y su batallon  
+   */
   public String reporteBatallon(int i){
     if(i < 0 || i > capitanes.size()-1)
       throw new UnsupportedOperationException();
     return capitanes.get(i).reportarse();
   }
+
+  /*
+   * Metodo para lanzar el reporte del soldado Gunter, instanceado
+   * en el metodo generarBatallones()
+   * 
+   * @return string: reporte del soldado
+   */
   public String reporteSoldadoEspecifico(){
     return this.soldadoReporte.reportarse();
   }
+
+  /*
+   * Metodo que itera sobre la lista capitanes para imprimir el
+   * reporte de todos tenientes y subordinados
+   * 
+   * @return string: reporte de todos los batallones
+   */
   public String reportarse(){
     String reporte = ""; 
     for(Soldado soldado : capitanes)

@@ -1,3 +1,7 @@
+/*
+* Clase encargada de solicitar los datos al usuario para crear
+* un nuevo soldado
+*/
 import Composite.*;
 import Decorator.*;
 
@@ -7,62 +11,51 @@ public class EquiparNuevoSoldado {
     Scanner sc = new Scanner(System.in);
     int opcion;
     String nombre;
-    String formacion;
+    String formacion = "";
 
-
+    /*
+     * Metodo encargado de solicitar los datos al usuario para crear
+     * un nuevo soldado
+     */
     public void crearNuevoSoldado(){
-        // pide el nombre del soldado
         System.out.println("Indique el nombre del soldado");
         nombre = sc.nextLine();
-        
-        // no es necesario que tenga formacion
-        formacion = "MataJudios";
-
-        // construye un objeto de tipo Capitan, Teniente o Cabo 
-        // depende de lo que elija el usuario
-        Soldado nuevoSoldado = escogerRango(nombre, formacion);
-
-        // con ayuda de un bucle, le preguntara que armas desea agregarle
-        // al soldado
+        Soldado nuevoSoldado = escogerRango(nombre);
         nuevoSoldado = agregarArmadura(nuevoSoldado);
         nuevoSoldado = agregarArma(nuevoSoldado);
         nuevoSoldado = agregarComplemento(nuevoSoldado);
-
-        
-        // imprime en pantalla todas las estadisticas
-        /*  
-        System.out.println(nuevoSoldado.getRango() + ": " + nuevoSoldado.getNombre() + '\n' +
-        "Formacion de combate: " + formacion + '\n' +
-        "Armas: " + nuevoSoldado.getArmas() + '\n' +
-        "Ataque: " + nuevoSoldado.getAtaque() + '\n' +
-        "Defensa: " + nuevoSoldado.getDefensa() + '\n' +
-        "Velocidad: " + nuevoSoldado.getVelocidad() + '\n');
-        */
         System.out.println(nuevoSoldado);
-
     } 
 
-    public Soldado escogerRango(String nombre, String formacion){
-        System.out.println("Indique el rango de tu soldado.");
-        System.out.println("1.- Capitan.\n" +
-                        "2.- Teniente.\n" +
-                        "3.- Cabo.\n");
-        while (true) {
-            try {
-                String opcionUsuario = sc.nextLine();
-                opcion = Integer.parseInt(opcionUsuario);
-                break;
-            } catch (NumberFormatException ex){ 
-                System.out.println("Por favor elige una opcion VALIDA:");
-                System.out.println("1.- Capitan.\n" +
-                                "2.- Teniente.\n" +
-                                "3.- Cabo.\n");
+    /*
+     * Metodo que pregunta al usuario el rango del soldado a crear
+     * 
+     * @param nombre: Recibe el nombre del soldado que creo
+     * 
+     * @return soldado: Regresa un soldado de tipo Cabo, Teniente o Capitan
+     *                  dependiendo de la opcion escogida. Con atributos como
+     *                  nombre y formacion = ""
+     */
+    public Soldado escogerRango(String nombre){
+        do {
+            String menu = "Indique el rango de tu soldado.\n" +
+                    "1.- Capitan.\n" +
+                    "2.- Teniente.\n" +
+                    "3.- Cabo.\n";
+            System.out.println(menu);
+            while (true) {
+                try {
+                    String opcionUsuario = sc.nextLine();
+                    opcion = Integer.parseInt(opcionUsuario);
+                    break;
+                } catch (NumberFormatException ex){ 
+                    System.out.println("Por favor elige una opcion VALIDA:");
+                    System.out.println(menu);
+                }
             }
-		}
-
-        switch (opcion) {
+            switch (opcion) {
             case 1:
-                return new Capitan(nombre, formacion); 
+                return new Capitan(nombre,formacion); 
     
             case 2:
                 return new Teniente(nombre); 
@@ -71,30 +64,34 @@ public class EquiparNuevoSoldado {
                 return new Cabo(nombre);
 
             default:
-                throw new IllegalArgumentException("Tipo de soldado no válido");
-        }
+                throw new IllegalArgumentException("Opcion no válida");
+            }
+        } while (opcion !=0);
     }
 
+    /*
+     * Metodo que pregunta la armadura que portara su soldado (opcional)
+     * 
+     * @param nombre: Recibe el soldado instanceado en el metodo anterior
+     * 
+     * @return soldado: Regresa un soldado decorado con la armadura
+     */
     public Soldado agregarArmadura(Soldado soldado){
         do{
-            System.out.println("Indique la armadura que desea equipar.");
-            System.out.println("1.- Armadura de kevlar.\n" +
-                            "2.- Armadura de grafeno.\n" +
-                            "3.- Armadura de tanque.\n" +
-                            "4.- Iron Cheems.\n" +
-                            "0.- Sin armadura");
+            String menu = "Indique la armadura que desea equipar.\n" +
+                        "1.- Armadura de kevlar.\n" +
+                        "2.- Armadura de grafeno.\n" +
+                        "3.- Armadura de tanque.\n" +
+                        "4.- Iron Cheems.\n" +
+                        "0.- Sin armadura";
+            System.out.println(menu);
             while (true) {
                 try {
                     String opcionUsuario = sc.nextLine();
                     opcion = Integer.parseInt(opcionUsuario);
                     break;
                 } catch (NumberFormatException ex){ 
-                    System.out.println("Por favor elige una opcion VALIDA:");
-                    System.out.println("1.- Armadura de kevlar.\n" +
-                            "2.- Armadura de grafeno.\n" +
-                            "3.- Armadura de tanque.\n" +
-                            "4.- Iron Cheems.\n" +
-                            "0.- Sin armadura");
+                    System.out.println(menu);
                 }
             }
             switch (opcion) {
@@ -117,12 +114,20 @@ public class EquiparNuevoSoldado {
                     System.out.println("Soldado sin armadura...");
                     break;
                 default:
-                    throw new IllegalArgumentException("Opcion no válida");
+                System.out.println("Opcion no valida");
             }
         }while(opcion != 0);
         return soldado;
     }
 
+    /*
+     * Metodo que pregunta el arma que portara su soldado (obligatorio ya que
+     * ningun soldado debe ir desarmado)
+     * 
+     * @param nombre: Recibe el soldado instanceado en el metodo anterior
+     * 
+     * @return soldado: Regresa un soldado decorado con rl arma
+     */
     public Soldado agregarArma(Soldado soldado){
         boolean booleano = true;
         System.out.println("Indique el arma que desea equipar. (Obligatorio).");
@@ -156,30 +161,34 @@ public class EquiparNuevoSoldado {
         return soldado;
     }
 
+    /*
+     * Metodo que pregunta el complemento que portara su soldado (opcional)
+     * 
+     * @param nombre: Recibe el soldado instanceado en el metodo anterior
+     * 
+     * @return soldado: Regresa un soldado decorado con el complemento
+     */
     public Soldado agregarComplemento(Soldado soldado){
         do{
-            System.out.println("Indique el complemeto que desea equipar.");
-            System.out.println("1.- Alas de gallina.\n" +
-                            "2.- Piernas de rana gigante.\n" +
-                            "3.- Turbinas.\n" +
-                            "0.- Sin complemento");
+            String menu = "Indique el complemeto que desea equipar.\n" +
+                        "1.- Alas de gallina.\n" +
+                        "2.- Piernas de rana gigante.\n" +
+                        "3.- Turbinas.\n" +
+                        "0.- Sin complemento";
+            System.out.println(menu);
             while (true) {
                 try {
                     String opcionUsuario = sc.nextLine();
                     opcion = Integer.parseInt(opcionUsuario);
                     break;
                 } catch (NumberFormatException ex){ 
-                    System.out.println("Por favor elige una opcion VALIDA:");
-                    System.out.println("1.- Alas de gallina.\n" +
-                            "2.- Piernas de rana gigante.\n" +
-                            "3.- Turbinas.\n" +
-                            "0.- Sin complemento");
+                    System.out.println(menu);
                 }
             }
 
             switch (opcion) {
                 case 1:
-                    //return new AlasGallina(soldado);
+                    return new AlasGallina(soldado);
         
                 case 2:
                     return new PiernasRanaGigante(soldado);

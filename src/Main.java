@@ -1,14 +1,13 @@
 import java.util.Scanner;
-import Composite.*; 
+import Composite.*;
 
 public class Main {
-  public static void main(String[] args) {
-    // Ciclo do para preguntar al usuario por las acciones del robot 
+	public static void main(String[] args) {
+
 		Scanner sc = new Scanner(System.in);
 		int opcion;
-    EquiparNuevoSoldado equiparNuevoSoldado = new EquiparNuevoSoldado();
-    ReportarBatallones reportarBatallones = new ReportarBatallones();
-     
+		EquiparNuevoSoldado equiparNuevoSoldado = new EquiparNuevoSoldado();
+		ReportarBatallones reportarBatallones = new ReportarBatallones();
 
 		System.out.println("***********************************************************");
 		System.out.println("*                                                         *");
@@ -16,12 +15,12 @@ public class Main {
 		System.out.println("*                                                         *");
 		System.out.println("***********************************************************\n");
 		System.out.println("Por favor elige la opcion que deseas ejecutar.");
-    
-    do {
+
+		do {
 			System.out.println("1.- Equipar nuevo soldado.\n" +
-							"2.- Reportar batallones.\n" +
-							"3.- Equipar a Cheems.\n" +
-              "0.- Salir del menu.");
+					"2.- Reportar batallones.\n" +
+					"3.- Equipar a Cheems.\n" +
+					"0.- Salir del menu.");
 
 			while (true) {
 				try {
@@ -32,10 +31,9 @@ public class Main {
 					System.out.println("1.- Equipar nuevo soldado.\n" +
 							"2.- Reportar batallones.\n" +
 							"3.- Equipar a Cheems.\n" +
-              "0.- Salir del menu.");
+							"0.- Salir del menu.");
 				}
 			}
-
 			switch (opcion) {
 
 				case 1:
@@ -44,12 +42,12 @@ public class Main {
 				case 2:
 					reportarBatallones.reportar();
 					break;
-        case 3: 
-          System.err.println("Aun no hemos recibido al soldado cheems \nEsperando pacientemente...");
+				case 3:
+					System.err.println("Aun no hemos recibido al soldado cheems \nEsperando pacientemente...");
+					break;
 				case 0:
 					System.out.println("Saliendo del menu...");
 					break;
-
 				default:
 					System.out.println("\nPor favor elige la opcion que deseas ejecutar.");
 					break;
