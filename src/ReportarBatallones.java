@@ -69,7 +69,7 @@ public class ReportarBatallones {
     Soldado darwin = new Capitan("Darwin", "Es por su propio bien");
     darwin = new PiernasRanaGigante(darwin);
     darwin = new PiernasRanaGigante(darwin);
-    darwin = new PiernasRanaGigante(darwin);
+    darwin = new RashoLaser(darwin);
     darwin = new ArmaduraTanque(darwin);
     Soldado marceline = new Teniente("Marceline"); 
     marceline = new Turbinas(marceline);
@@ -88,6 +88,7 @@ public class ReportarBatallones {
     finn = new EspadaGiganteAnime(finn);
     Soldado jake = new Cabo("Jake");
     jake = new PiernasRanaGigante(jake);
+    jake = new EspadaGiganteAnime(jake);
     jake = new PiernasRanaGigante(jake);
     jake = new ArmaduraTanque(jake);
     Soldado reyHelado = new Cabo("Simon");
@@ -109,6 +110,7 @@ public class ReportarBatallones {
     vegeta = new ArmaduraKevlar(vegeta);
     Soldado picoro = new Teniente("Picoro");
     picoro = new PiernasRanaGigante(picoro);
+    picoro = new RashoLaser(picoro);
     picoro = new ArmaduraTanque(picoro);
     gohan.add(vegeta);
     gohan.add(picoro);
@@ -118,10 +120,13 @@ public class ReportarBatallones {
     Soldado krilin = new Cabo("krilin"); 
     Soldado roshi = new Cabo("Maestro Roshi");
     goku = new Turbinas(goku);
+    goku = new RashoLaser(goku);
     trunks = new EspadaGiganteAnime(trunks);
     gotenks = new ArmaduraTanque(gotenks);
+    gotenks = new RashoLaser(gotenks);
     krilin = new PistolaPapas(krilin);
     roshi = new Turbinas(roshi);
+    roshi = new PistolaPapas(roshi);
     vegeta.add(trunks);
     vegeta.add(gotenks);
     picoro.add(goku);
@@ -133,6 +138,7 @@ public class ReportarBatallones {
     gumball = new PistolaPapas(gumball);
     anais = new ArmaduraGrafeno(anais);
     anais = new Turbinas(anais);
+    anais = new EspadaGiganteAnime(anais);
     darwin.add(gumball);
     darwin.add(anais);
     Soldado nicole = new Cabo("Nicole");
@@ -148,6 +154,7 @@ public class ReportarBatallones {
     richard = new ArmaduraTanque(richard);
     penny = new PistolaPapas(penny);
     zack = new ArmaduraTanque(zack);
+    zack = new EspadaGiganteAnime(zack);
     bobert = new RashoLaser(bobert);
     gumball.add(penny);
     gumball.add(zack);
