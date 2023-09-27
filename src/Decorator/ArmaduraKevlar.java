@@ -35,5 +35,9 @@ public class ArmaduraKevlar extends ArmasDecorator{
   public String getArmas(){
     return "Armadura de kevlar, " + soldado.getArmas();
   }
+
+  public int getAtaque(){
+    return soldado.getAtaque();
+  }
   
 }

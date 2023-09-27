@@ -36,4 +36,8 @@ public class ArmaduraTanque extends ArmasDecorator{
   public String getArmas(){
     return "Armadura de tanque, " + soldado.getArmas();
   }
+
+  public int getAtaque(){
+    return soldado.getAtaque();
+  }
 }

@@ -36,4 +36,8 @@ public class ArmaduraGrafeno extends ArmasDecorator{
   public String getArmas(){
     return "Armadura de grafeno, " + soldado.getArmas();
   }
+
+  public int getAtaque(){
+    return soldado.getAtaque();
+  }
 }

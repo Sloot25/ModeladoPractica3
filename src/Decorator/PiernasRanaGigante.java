@@ -36,4 +36,8 @@ public class PiernasRanaGigante extends ArmasDecorator{
   public String getArmas(){
     return "Piernas de rana gigante, " + soldado.getArmas();
   }
+
+  public int getAtaque(){
+    return soldado.getAtaque();
+  }
 }

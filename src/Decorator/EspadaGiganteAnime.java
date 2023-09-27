@@ -36,4 +36,8 @@ public class EspadaGiganteAnime extends ArmasDecorator{
   public String getArmas(){
     return "Espada gigante de anime, " + soldado.getArmas();
   }
+
+  public int getVelocidad(){
+    return soldado.getVelocidad();
+  }
 }

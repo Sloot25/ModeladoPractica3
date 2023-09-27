@@ -36,4 +36,8 @@ public class PistolaPapas extends ArmasDecorator {
   public String getArmas(){
     return "Pistola de papas, " + soldado.getArmas();
   }
+
+  public int getVelocidad(){
+    return soldado.getVelocidad();
+  }
 }

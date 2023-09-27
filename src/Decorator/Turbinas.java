@@ -36,5 +36,9 @@ public class Turbinas extends ArmasDecorator{
   public String getArmas(){
     return "Turbinas, " + soldado.getArmas();
   }
+
+  public int getDefensa(){
+    return soldado.getDefensa();
+  }
   
 }
