@@ -43,6 +43,10 @@ public class Main {
 					reportarBatallones.reportar();
 					break;
 				case 3:
+          CuartelCheems cuartel = new CuartelCheems();
+          CheemsSoldado cheems = cuartel.desplegarCheems();
+          Soldado cheemsDeLaHoja = new CheemsAdapter(cheems);
+          equiparNuevoSoldado.agregarArma(cheemsDeLaHoja);
 					System.err.println("Aun no hemos recibido al soldado cheems \nEsperando pacientemente...");
 					break;
 				case 0:

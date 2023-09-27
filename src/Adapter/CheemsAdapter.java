@@ -1,15 +1,28 @@
 import Composite.Soldado;
+import java.util.ArrayList;
 
 public class CheemsAdapter extends Soldado{
-  String nombre;
   String rango;
   String formacion;
-  int id;
+  ArrayList<Soldado> soldados;
   private CheemsSoldado cheems;
-  public CheemsAdapter(String nombre, int id){
-    this.nombre = nombre;
-    this.id = id;
-    cheems = new CheemsSoldado(nombre, id);
+  public CheemsAdapter(CheemsSoldado cheems, String rango){
+    this.cheems = cheems;
+    this.rango = rango; 
+    this.soldados = new ArrayList<Soldado>();
+  }
+  public void setFormacion(String formacion){
+    this.formacion = formacion;
+  }
+  public void add(Soldado soldado){
+    if(rango.equals("Cabo") || (rango.equals("Teniente") && !soldado.getRango().equals("Cabo")) || (rango.equals("Capitan") && !soldado.getRango().equals("Teniente")) )
+      throw new UnsupportedOperationException("El proceso de agregar soldado a Cheems ha fallado");
+    soldados.add(soldado);
+  }
+  public void remove(Soldado soldado){
+    if(rango.equals(soldado))
+      throw new UnsupportedOperationException("El rango de cheems es cabo");
+    soldados.remove(soldado);
   }
   @Override
   public int getAtaque(){
@@ -28,7 +41,7 @@ public class CheemsAdapter extends Soldado{
   }
   @Override
   public String getNombre(){
-    return this.nombre;
+    return "Cheems";
   }
   @Override
   public String getRango(){
@@ -40,7 +53,29 @@ public class CheemsAdapter extends Soldado{
   }
   @Override
   public String reportarse() {
-    return cheems.infoCheems();
+    String espaciado = "";
+    switch(this.rango){
+      case "Teniente":
+        espaciado += "    ";
+      case "Cabo":
+        espaciado += "    ";
+        break;
+    }
+    return  espaciado + this.getRango() + ": " + this.getNombre() + '\n'+
+    espaciado + "Formacion de combate: " + this.getFormacion() + '\n' +
+    espaciado + "Armas: " + this.getArmas() + '\n' +
+    espaciado + "Ataque: " + this.getAtaque() + '\n' +
+    espaciado + "Defensa: " + this.getDefensa() + '\n' +
+    espaciado + "Velocidad: " + this.getVelocidad() + '\n' + reporteBatallon();
+  }
+  @Override 
+  public String reporteBatallon(){
+    if(rango.equals("Cabo"))
+      throw new UnsupportedOperationException();
+    String reporte = "";
+    for(Soldado soldado : soldados)
+      reporte += soldado.reportarse() + '\n';
+    return reporte; 
   }
     
 }
