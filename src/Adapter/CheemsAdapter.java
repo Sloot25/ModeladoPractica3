@@ -2,6 +2,8 @@ import Composite.Soldado;
 
 public class CheemsAdapter extends Soldado{
   String nombre;
+  String rango;
+  String formacion;
   int id;
   private CheemsSoldado cheems;
   public CheemsAdapter(String nombre, int id){
@@ -11,18 +13,30 @@ public class CheemsAdapter extends Soldado{
   }
   @Override
   public int getAtaque(){
-    return 5;
+    return (int)cheems.getAtaqueMagico();
   }
   @Override
   public int getDefensa(){
-    return 5; 
+    return (int)cheems.getDefensaMagica(); 
   }
   public int getVelocidad(){
-    return 5;
+    return (int)cheems.getMovimientoMagico();
   }
   @Override 
   public String getArmas(){
     return cheems.mostrarReliquias();
+  }
+  @Override
+  public String getNombre(){
+    return this.nombre;
+  }
+  @Override
+  public String getRango(){
+    return this.rango;
+  }
+  @Override
+  public String getFormacion(){
+    return this.formacion;
   }
   @Override
   public String reportarse() {

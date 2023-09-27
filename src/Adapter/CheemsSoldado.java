@@ -17,6 +17,18 @@ public class CheemsSoldado{
 		movimientoMagico = 5.0;
 	}
 
+	public double getAtaqueMagico(){
+		return ataqueMagico;
+	}
+	
+	public double getDefensaMagica(){
+		return defensaMagica;
+	}
+
+	public double getMovimientoMagico(){
+		return movimientoMagico;
+	}
+
 	public void agregarReliquia(Reliquia nuevaReliquia){
 		for(Reliquia rel : reliquias.values()){
 			String nuevoFolk = nuevaReliquia.getFolklore();
