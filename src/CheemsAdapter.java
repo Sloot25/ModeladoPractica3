@@ -6,10 +6,12 @@ public class CheemsAdapter extends Soldado{
   String formacion;
   ArrayList<Soldado> soldados;
   private CheemsSoldado cheems;
+  String espaciado;
   public CheemsAdapter(CheemsSoldado cheems, String rango){
     this.cheems = cheems;
     this.rango = rango; 
     this.soldados = new ArrayList<Soldado>();
+    espaciado = "";
   }
   public void setFormacion(String formacion){
     this.formacion = formacion;
@@ -37,7 +39,7 @@ public class CheemsAdapter extends Soldado{
   }
   @Override 
   public String getArmas(){
-    return cheems.mostrarReliquias();
+    return '\n'+ espaciado + cheems.mostrarReliquias().replace("\n", '\n' + espaciado);
   }
   @Override
   public String getNombre(){
@@ -53,7 +55,6 @@ public class CheemsAdapter extends Soldado{
   }
   @Override
   public String reportarse() {
-    String espaciado = "";
     switch(this.rango){
       case "Teniente":
         espaciado += "    ";

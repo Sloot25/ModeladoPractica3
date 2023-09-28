@@ -68,4 +68,12 @@ public abstract class Soldado {
     throw new UnsupportedOperationException();
   }
 
+  /*
+   *  Si quieren que poder elegir a nuestro soldado venga desde el composite: 
+   *
+   *  public ArrayLidt<Soldado> getSoldados();
+   *
+   * */
+
+
 }

@@ -67,4 +67,11 @@ public class Capitan extends Soldado {
       "Defensa: " + this.getDefensa() + '\n' +
       "Velocidad: " + this.getVelocidad() + '\n';
   }
+
+  /*
+   *  public ArrayList<Soldado> getSoldados();
+   *
+   * */
+
+
 }

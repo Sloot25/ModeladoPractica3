@@ -8,6 +8,10 @@ public class Main {
 		int opcion;
 		EquiparNuevoSoldado equiparNuevoSoldado = new EquiparNuevoSoldado();
 		ReportarBatallones reportarBatallones = new ReportarBatallones();
+    CuartelCheems cuartel = new CuartelCheems();
+    CheemsSoldado cheems = cuartel.desplegarCheems();
+    Soldado cheemsDeLaHoja = new CheemsAdapter(cheems, "Teniente");
+    reportarBatallones.setCheems(cheemsDeLaHoja);
 
 		System.out.println("***********************************************************");
 		System.out.println("*                                                         *");
@@ -43,13 +47,9 @@ public class Main {
 					reportarBatallones.reportar();
 					break;
 				case 3:
-          CuartelCheems cuartel = new CuartelCheems();
-          CheemsSoldado cheems = cuartel.desplegarCheems();
-          Soldado cheemsDeLaHoja = new CheemsAdapter(cheems, "Cabo");
           equiparNuevoSoldado.agregarArma(cheemsDeLaHoja);
-          
-					System.err.println("Aun no hemos recibido al soldado cheems \nEsperando pacientemente...");
-					break;
+          reportarBatallones.agregarCheems();
+          break;
 				case 0:
 					System.out.println("Saliendo del menu...");
 					break;
