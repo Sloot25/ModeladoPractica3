@@ -12,6 +12,7 @@ public class CheemsAdapter extends Soldado{
     this.rango = rango; 
     this.soldados = new ArrayList<Soldado>();
     espaciado = "";
+    this.formacion = "";
   }
   public void setFormacion(String formacion){
     this.formacion = formacion;
