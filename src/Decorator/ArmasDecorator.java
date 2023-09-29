@@ -4,6 +4,7 @@
  */
 package Decorator;
 
+import java.util.ArrayList;
 import Composite.Soldado;
 
 public abstract class ArmasDecorator extends Soldado {
@@ -87,4 +88,13 @@ public abstract class ArmasDecorator extends Soldado {
       "Defensa: " + this.getDefensa() + '\n' +
       "Velocidad: " + this.getVelocidad() + '\n';
   }
+
+  /*
+   * @return ArrayList: Regresa una lista de los soldados a cargo de nuestro soldado 
+   * */
+
+  public ArrayList<Soldado> getSoldados(){
+    return this.soldado.getSoldados();
+  }
+
 }

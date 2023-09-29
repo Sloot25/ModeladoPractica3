@@ -47,8 +47,12 @@ public class Main {
 					reportarBatallones.reportar();
 					break;
 				case 3:
-          equiparNuevoSoldado.agregarArma(cheemsDeLaHoja);
+          reportarBatallones.setCheems(equiparNuevoSoldado.agregarArma(cheemsDeLaHoja));
           reportarBatallones.agregarCheems();
+          System.out.println("----------------------------------------------------------------------------------------");
+          System.out.println("\n              Nuestro soldado Cheems ha llegado al campo de batalla ");
+          System.out.println("         Cheems al ser nuevo en la ciudad fue agregado como cabo al batallon 2");
+          System.out.println("\n----------------------------------------------------------------------------------------");
           break;
 				case 0:
 					System.out.println("Saliendo del menu...");

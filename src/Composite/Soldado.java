@@ -2,9 +2,9 @@ package Composite;
 
 import java.util.ArrayList;
 public abstract class Soldado {
-  String nombre; 
-  String formacion; 
-  String rango;
+  protected String nombre; 
+  protected String formacion; 
+  protected String rango;
 
   /*
    * Metodos getters y setters empleados, donde los getAtaque, defensa, velocidad 
