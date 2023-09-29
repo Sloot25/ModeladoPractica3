@@ -3,7 +3,7 @@ package Composite;
 import java.util.ArrayList;
 
 public class Teniente extends Soldado{
-  ArrayList<Soldado> cabos;
+  private ArrayList<Soldado> cabos;
   public Teniente(String nombre){
     cabos = new ArrayList<Soldado>();
     this.nombre = nombre; 
