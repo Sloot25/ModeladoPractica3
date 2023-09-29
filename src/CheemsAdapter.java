@@ -12,7 +12,14 @@ public class CheemsAdapter extends Soldado{
     this.rango = rango; 
     this.soldados = new ArrayList<Soldado>();
     espaciado = "";
-    this.formacion = "";
+    this.formacion = "";    
+    switch(this.rango){
+      case "Cabo":
+        espaciado += "    ";
+      case "Teniente":
+        espaciado += "    ";
+        break;
+    }
   }
   public void setFormacion(String formacion){
     this.formacion = formacion;
@@ -56,13 +63,7 @@ public class CheemsAdapter extends Soldado{
   }
   @Override
   public String reportarse() {
-    switch(this.rango){
-      case "Teniente":
-        espaciado += "    ";
-      case "Cabo":
-        espaciado += "    ";
-        break;
-    }
+
     return  espaciado + this.getRango() + ": " + this.getNombre() + '\n'+
     espaciado + "Formacion de combate: " + this.getFormacion() + '\n' +
     espaciado + "Armas: " + this.getArmas() + '\n' +
@@ -73,7 +74,7 @@ public class CheemsAdapter extends Soldado{
   @Override 
   public String reporteBatallon(){
     if(rango.equals("Cabo"))
-      throw new UnsupportedOperationException();
+      return "";
     String reporte = "";
     for(Soldado soldado : soldados)
       reporte += soldado.reportarse() + '\n';

@@ -74,7 +74,7 @@ public class EquiparNuevoSoldado {
      * 
      * @return soldado: Regresa un soldado decorado con la armadura
      */
-    public void agregarArma(Soldado soldado){
+    public Soldado agregarArma(Soldado soldado){
         int contador_armas = 0;
         do{
             String menu = "Indique la armadura que desea equipar.\n" +
@@ -182,12 +182,13 @@ public class EquiparNuevoSoldado {
                         System.out.println("REPORTE FINAL DE SOLDADO:\n");
                         System.out.println(soldado);
                         opcion = -1;
-                        break;
+                        return soldado;
                     }
 
                 default:
                 System.out.println("Opcion no valida");
             }
         } while(opcion != -1);
+      return soldado;
     }
 }
