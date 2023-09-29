@@ -65,4 +65,13 @@ public class Teniente extends Soldado{
       "    Defensa: " + this.getDefensa() + '\n' +
       "    Velocidad: " + this.getVelocidad() + '\n';
   }
+
+  /*
+   *  @return ArrayList : una lista de los soldados a cargo de nuestro teniente
+   *
+   * */
+
+  public ArrayList<Soldado> getSoldados(){
+    return this.cabos;
+  }
 }

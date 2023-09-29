@@ -67,4 +67,15 @@ public class Capitan extends Soldado {
       "Defensa: " + this.getDefensa() + '\n' +
       "Velocidad: " + this.getVelocidad() + '\n';
   }
+
+  /*
+   *  @retun ArrayList : Una lista de los soldados a cargo de nuestro capitan 
+   *
+   * */
+
+  public ArrayList<Soldado> getSoldados(){
+    return this.tenientes;
+  }
+
+
 }

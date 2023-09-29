@@ -77,5 +77,12 @@ public class CheemsAdapter extends Soldado{
       reporte += soldado.reportarse() + '\n';
     return reporte; 
   }
-    
+
+  /*
+   *  @return ArrayList : Lista de los soldados a cargo de nuestro cheems
+   * */
+
+  public ArrayList<Soldado> getSoldados(){
+    return soldados;
+  }
 }

@@ -9,10 +9,27 @@ import java.util.ArrayList;
 public class ReportarBatallones {
   ArrayList<Soldado> capitanes; 
   Soldado soldadoReporte;
-  Soldado soldadoCheems;
+  Soldado cheems;
   public ReportarBatallones(){
     capitanes = new ArrayList<Soldado>();
     generarBatallones();
+  }
+  
+  /*
+   * @param soldado: Un objeto de tipo Soldado que sera considerado como nuestro cheems 
+   *  
+   *  Asigna al soldado recibido como atributo de clase 
+   * */
+  public void setCheems(Soldado soldado){
+    this.cheems = soldado;
+  }
+
+  /*  Agrega a nuestro Cheems como soldado del batallon 2
+   *
+   *
+   * */
+  public void agregarCheems(){
+    capitanes.get(1).getSoldados().get(1).add(cheems);
   }
 
   /*
@@ -38,8 +55,7 @@ public class ReportarBatallones {
             System.out.println(reporteSoldadoEspecifico());
             return;
           case 4: 
-            System.out.println("Aun no ha llegado el soldado cheems"); 
-            //System.out.println(soldadoCheems);
+            System.out.println(this.cheems.reportarse());
             return; 
           default:
             System.err.println("Por favor, elige alguna de las opciones");
