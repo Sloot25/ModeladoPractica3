@@ -10,7 +10,7 @@ public class Main {
 		ReportarBatallones reportarBatallones = new ReportarBatallones();
     CuartelCheems cuartel = new CuartelCheems();
     CheemsSoldado cheems = cuartel.desplegarCheems();
-    Soldado cheemsDeLaHoja = new CheemsAdapter(cheems, "Teniente");
+    Soldado cheemsDeLaHoja = new CheemsAdapter(cheems, "Cabo");
     reportarBatallones.setCheems(cheemsDeLaHoja);
 
 		System.out.println("***********************************************************");

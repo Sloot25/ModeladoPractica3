@@ -15,13 +15,21 @@ public class ReportarBatallones {
     generarBatallones();
   }
   
-
+  /*
+   * @param soldado: Un objeto de tipo Soldado que sera considerado como nuestro cheems 
+   *  
+   *  Asigna al soldado recibido como atributo de clase 
+   * */
   public void setCheems(Soldado soldado){
     this.cheems = soldado;
   }
 
+  /*  Agrega a nuestro Cheems como soldado del batallon 2
+   *
+   *
+   * */
   public void agregarCheems(){
-    capitanes.get(1).add(this.cheems);
+    capitanes.get(1).getSoldados().get(1).add(cheems);
   }
 
   /*

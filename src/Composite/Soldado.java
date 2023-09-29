@@ -1,5 +1,6 @@
 package Composite;
 
+import java.util.ArrayList;
 public abstract class Soldado {
   String nombre; 
   String formacion; 
@@ -67,13 +68,14 @@ public abstract class Soldado {
   public String reporteBatallon(){
     throw new UnsupportedOperationException();
   }
-
+  
   /*
-   *  Si quieren que poder elegir a nuestro soldado venga desde el composite: 
-   *
-   *  public ArrayLidt<Soldado> getSoldados();
+   *  Metodo que regresa un ArrayLIst correspondiente a los soldados a cargo de nuestro teniento o capitan
    *
    * */
+   public ArrayList<Soldado> getSoldados(){
+    throw new UnsupportedOperationException("El soldado es un cabo");
+  }
 
 
 }
