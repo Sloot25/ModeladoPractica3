@@ -43,12 +43,16 @@ public class Main {
 					reportarBatallones.reportar();
 					break;
 				case 3:
-          CuartelCheems cuartel = new CuartelCheems();
-          CheemsSoldado cheems = cuartel.desplegarCheems();
-          Soldado cheemsDeLaHoja = new CheemsAdapter(cheems, "Cabo");
-          equiparNuevoSoldado.agregarArma(cheemsDeLaHoja);
-          
-					System.err.println("Aun no hemos recibido al soldado cheems \nEsperando pacientemente...");
+					CuartelCheems cuartel = new CuartelCheems();
+        			CheemsSoldado cheems = cuartel.desplegarCheems();
+        			Soldado cheemsDeLaHoja = new CheemsAdapter(cheems, "Cabo");
+					equiparNuevoSoldado.agregarArma(cheemsDeLaHoja);
+					// agregamos cheems al segundo batallon
+					Soldado capitanBatallonDos = reportarBatallones.capitanes.get(1);
+					capitanBatallonDos.tenientes.get(0).add(cheemsDeLaHoja);
+					System.out.println("El soldado Cheems se ha agregado al batallon 2. Ahora ya puedes visualizarlo."); 
+					
+					//System.err.println("Aun no hemos recibido al soldado cheems \nEsperando pacientemente...");
 					break;
 				case 0:
 					System.out.println("Saliendo del menu...");

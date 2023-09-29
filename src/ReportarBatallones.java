@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class ReportarBatallones {
   ArrayList<Soldado> capitanes; 
   Soldado soldadoReporte;
+  Soldado soldadoCheems;
   public ReportarBatallones(){
     capitanes = new ArrayList<Soldado>();
     generarBatallones();
@@ -37,7 +38,8 @@ public class ReportarBatallones {
             System.out.println(reporteSoldadoEspecifico());
             return;
           case 4: 
-            System.out.println("Aun no ha llegado el soldado cheems");
+            System.out.println("Aun no ha llegado el soldado cheems"); 
+            //System.out.println(soldadoCheems);
             return; 
           default:
             System.err.println("Por favor, elige alguna de las opciones");

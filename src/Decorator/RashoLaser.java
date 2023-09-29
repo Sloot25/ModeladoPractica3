@@ -36,4 +36,8 @@ public class RashoLaser extends ArmasDecorator{
   public String getArmas(){
     return "Rasho laser, " + soldado.getArmas();
   }
+
+  public int getDefensa(){
+    return soldado.getDefensa();
+  }
 }
